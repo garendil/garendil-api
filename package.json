@@ -1,0 +1,12 @@
+{
+  "name": "@garendil/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "build": "echo 'No build step for Python backend'",
+    "test": "pytest --cov=app",
+    "lint": "ruff check . && mypy app"
+  }
+}
