@@ -1,4 +1,6 @@
+# ─────────────────────────────────────────
 # Python
+# ─────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *.pyo
@@ -8,39 +10,90 @@ __pycache__/
 dist/
 build/
 .eggs/
+*.whl
+*.so
+*.dylib
 
-# Virtual env
+# ─────────────────────────────────────────
+# Virtual environments
+# ─────────────────────────────────────────
 .venv/
 venv/
 env/
+.env/
 
-# Environment
+# uv (gestor de paquetes moderno)
+.uv/
+uv.lock
+
+# ─────────────────────────────────────────
+# Variables de entorno y secretos
+# ─────────────────────────────────────────
 .env
 .env.local
 .env.production
+.env.staging
+.env.test
 *.env
 
-# Secrets (nunca commitear)
+# Supabase — nunca commitear claves de servicio
+.supabase/
+supabase/.env
+supabase/config.toml.local
+
+# Secretos varios
 secrets.json
 credentials.json
 service_account.json
+*.pem
+*.key
+*.p12
+*.pfx
 
-# Testing
+# ─────────────────────────────────────────
+# Testing y cobertura
+# ─────────────────────────────────────────
 .pytest_cache/
 .coverage
+.coverage.*
 htmlcov/
 .mypy_cache/
+.ruff_cache/
 
-# ML models
+# ─────────────────────────────────────────
+# ML models y datos pesados
+# ─────────────────────────────────────────
 *.pkl
 *.joblib
+*.h5
+*.onnx
 models/*.pkl
+models/*.joblib
+data/raw/
+data/processed/
 
-# IDE
+# ─────────────────────────────────────────
+# Docker
+# ─────────────────────────────────────────
+.docker/
+docker-compose.override.yml
+
+# ─────────────────────────────────────────
+# IDE y editores
+# ─────────────────────────────────────────
 .idea/
 .vscode/
 *.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
 
-# Logs
+# ─────────────────────────────────────────
+# Logs y temporales
+# ─────────────────────────────────────────
 *.log
 logs/
+tmp/
+temp/
+.tmp/
