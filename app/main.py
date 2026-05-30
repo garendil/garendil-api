@@ -24,6 +24,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Auth middleware: verifica JWT Supabase, inyecta request.state.user_id.
+# Solo activo si SUPABASE_URL está configurado (desactivado en tests sin Supabase).
+if os.getenv("SUPABASE_URL"):
+    from app.middleware import AuthMiddleware
+    app.add_middleware(AuthMiddleware)
+
 app.include_router(api_router)
 
 
